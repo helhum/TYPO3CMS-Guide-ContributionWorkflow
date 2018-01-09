@@ -31,12 +31,15 @@ Summary line
 
    Here is a list of the allowed keywords:
 
-   * [BUGFIX]
-   * [FEATURE]
-   * [TASK]
-   * [DOCS]
+   * [BUGFIX] (Summarizes what is fixed)
+   * [SECURITY] (Summarizes the security related bugfix)
+   * [FEATURE] (Summarizes the feature)
+   * [TASK] (Summarizes the task, like what is cleaned up)
+   * [DOCS] (Summarizes what documentation was added)
 
-   Whenever your change introduces a breaking change, it is **mandatory** to put **!!!** in front of the keyword.
+   Whenever your change introduces a breaking change, it is **mandatory** to put **[!!!]** in front of the keyword.
+   
+   No other keywords should be used except the ones above.
 
    Optionally you can prefix the keyword with **[WIP]** indicating that the review is in a "Work-In-Progress" state and
    should not be merged.
@@ -45,8 +48,12 @@ Summary line
    as your summary line.
 
 Description
-   Here you can go into detail about the how and why of the change. It should be brief, but yet descriptive so people reviewing
-   your change get an idea what they need to look out for
+   Here you can go into detail about the what changed and why. It should be brief, but yet descriptive so people reviewing
+   your change get an idea what they need to look out for. Try to keep the "how" short or leave it out, as the code ideally
+   show how it is fixed.
+   
+   If a change includes adaptions to composer.json and/or composer.lock, include the composer commands used
+   to get to the new state. This helps for reviews and to resolve conflicts that can often occur in composer.lock
 
 Resolves
    You need to reference an issue on Forge_ here simply by adding #[ISSUE_NUMBER]. If your issue resolves `multiple` issues
